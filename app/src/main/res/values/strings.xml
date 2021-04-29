@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Calories Counter</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    //---------Bottom Bar----------------
+    <string name="lb_stats">Stats</string>
+    <string name="lb_diary">Diary</string>
+    <string name="lb_home">Home</string>
 </resources>

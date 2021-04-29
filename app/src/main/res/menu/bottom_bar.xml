@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="@string/lb_home" />
+    <item
+        android:id="@+id/diaryFragment"
+        android:icon="@drawable/ic_book"
+        android:title="@string/lb_diary" />
+    <item
+        android:id="@+id/statsFragment"
+        android:icon="@drawable/ic_equalizer"
+        android:title="@string/lb_stats" />
+</menu>
