@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Calories Counter</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
     <!-- Bottom Bar -->
@@ -13,5 +11,10 @@
     <string name="breakfast_btn_title">Breakfast</string>
     <string name="launch_btn_title">Launch</string>
     <string name="dinner_btn_title">Dinner</string>
+
+    <!-- fragment_breakfast_list -->
+    <string name="breakfast_title">Breakfast</string>
+    <string name="total_calories">Total calories</string>
+    <string name="list_empty">Your list is empty</string>
 
 </resources>

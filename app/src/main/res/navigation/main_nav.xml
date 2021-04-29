@@ -20,4 +20,9 @@
         android:name="com.example.caloriescounter.DiaryFragment"
         android:label="@string/lb_diary"
         tools:layout="@layout/fragment_diary" />
+    <fragment
+        android:id="@+id/breakfastListFragment"
+        android:name="com.example.caloriescounter.breakfastListFragment"
+        android:label="fragment_breakfast_list"
+        tools:layout="@layout/fragment_breakfast_list" />
 </navigation>
