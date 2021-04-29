@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "409731482859",
+    "project_id": "calories-counter-44a3d",
+    "storage_bucket": "calories-counter-44a3d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:409731482859:android:8a2625ce283a498dd5eaae",
+        "android_client_info": {
+          "package_name": "com.example.caloriescounter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "409731482859-iq796l22a3d9ehbdsq7svpmcaj1anv1h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDE_lXaN5R8tRtFc4ZKy-i10aoU-qMWNUU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "409731482859-iq796l22a3d9ehbdsq7svpmcaj1anv1h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
