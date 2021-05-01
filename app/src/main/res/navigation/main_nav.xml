@@ -34,4 +34,9 @@
         android:name="com.example.caloriescounter.ItemFragment"
         android:label="fragment_item"
         tools:layout="@layout/fragment_item" />
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.caloriescounter.listFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" />
 </navigation>
