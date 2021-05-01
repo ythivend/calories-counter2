@@ -12,6 +12,12 @@
     <string name="launch_btn_title">Launch</string>
     <string name="dinner_btn_title">Dinner</string>
 
+    <!-- fragment_diary -->
+    <string name="diary_title">Diary</string>
+    <string name="goals">My goals</string>
+    <string name="weight">Weight</string>
+    <string name="weight_g">Weight goal</string>
+
     <!-- fragment_breakfast_list -->
     <string name="breakfast_title">Breakfast</string>
     <string name="total_calories">Total calories</string>
