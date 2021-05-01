@@ -26,4 +26,9 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
     }
+    @Override
+    public  boolean onSupportNavigateUp(){
+        NavController navController = Navigation.findNavController(this, R.id.fragment);
+        return navController.navigateUp();
+    }
 }
