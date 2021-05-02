@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 
 public class breakfastListFragment extends Fragment {
 
@@ -27,10 +29,13 @@ public class breakfastListFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_breakfast_list, container, false);
-        /*Button button = view.findViewById(R.id.breakfast_fab);
+        FloatingActionButton button;
+        button = view.findViewById(R.id.breakfast_fab);
+        button.setOnClickListener(v -> {
+            NavController navController = NavHostFragment.findNavController(this);
+            navController.navigate(R.id.action_breakfastListFragment_to_listFragment);
+        });
 
-        NavController navController = NavHostFragment.findNavController(this);
-        navController.navigate(R.id.action_breakfastListFragment_to_listFragment);
-        */return view;
+        return view;
     }
 }

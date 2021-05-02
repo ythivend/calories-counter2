@@ -1,26 +1,28 @@
 package com.example.caloriescounter;
 
-import android.content.ClipData;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.FirebaseFirestore;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link listFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import static android.content.ContentValues.TAG;
+
+
 public class listFragment extends Fragment {
 
     public listFragment() {
@@ -28,28 +30,50 @@ public class listFragment extends Fragment {
     }
 
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list, container, false);
-        CollectionReference item = FirebaseFirestore.getInstance().collection("Item");
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        ListView listView = view.findViewById(R.id.itemListView);
-            /*UserAccount tom = new UserAccount("Tom","admin");
-            UserAccount jerry = new UserAccount("Jerry","user");
-            UserAccount donald = new UserAccount("Donald","guest", false);
+        db.collection("Item")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>(){
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if(task.isSuccessful()){
+                            List<String> item = new ArrayList<String>();
 
-            UserAccount[] users = new UserAccount[]{tom,jerry, donald};
-*/
+                            for (QueryDocumentSnapshot document : task.getResult()){
+                                Log.d("TAG", document.getId() + " => " + document.getData());
 
-        // android.R.layout.simple_list_item_1 is a constant predefined layout of Android.
-        // used to create a ListView with simple ListItem (Only one TextView).
+                                //item.add(document.getData().get("Item").toString());
 
-        ArrayAdapter<String> arrayAdapter
-                = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1 , (List<String>) item);
+                            }
+                            ListView listView = view.findViewById(R.id.itemListView);
+                            ArrayAdapter<String> arrayAdapter
+                                    = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1 , item);
+
+                            listView.setAdapter(arrayAdapter);
+                        } else {
+                            Log.w(TAG, "Error getting documents.", task.getException());
+                        }
+                    }
+                });
+       // ListView listView = view.findViewById(R.id.itemListView);
 
 
-        listView.setAdapter(arrayAdapter);
+
+     /*   listView.setOnItemClickListener((adapterView, view, position, rowId) -> {
+            String fruit = arrayAdapter.getItem(position);
+            //Snackbar.make(view, "Vous avez choisi " + fruit, Snackbar.LENGTH_LONG).show();
+        });*/
+
+
+
+
+        //listView.setAdapter(arrayAdapter);
         // Inflate the layout for this fragment
         return view; //inflater.inflate(R.layout.fragment_list, container, false);
     }
