@@ -15,8 +15,10 @@
     <!-- fragment_diary -->
     <string name="diary_title">Diary</string>
     <string name="goals">My goals</string>
+    <string name="name">Name Surname</string>
+    <string name="age">Age</string>
     <string name="weight">Weight</string>
-    <string name="weight_g">Weight goal</string>
+    <string name="weight_g">Goal Weight</string>
 
     <!-- fragment_breakfast_list -->
     <string name="breakfast_title">Breakfast</string>

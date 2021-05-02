@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/save_btn"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
@@ -13,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="200dp"
         android:text="@string/weight"
         android:textColor="@color/black"
@@ -27,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="15dp"
         android:text="@string/goals"
         android:textColor="@color/black"
@@ -35,14 +36,14 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/age_textInput" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="200dp"
         android:text="@string/weight_g"
         android:textColor="@color/black"
@@ -69,7 +70,7 @@
         android:layout_width="141dp"
         android:layout_height="126dp"
         android:layout_marginStart="135dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="135dp"
         android:src="@drawable/profile"
         app:layout_constraintEnd_toEndOf="parent"
@@ -78,41 +79,39 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/name_textInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="101dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="Name Surname"
+        android:hint="@string/name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/age_textInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="101dp"
-        android:layout_marginTop="5dp"
         android:layout_marginEnd="101dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="Age"
+        android:hint="@string/age"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/name_textInput" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/weight_textInput"
         android:layout_width="86dp"
         android:layout_height="38dp"
         android:layout_marginStart="23dp"
-        android:layout_marginTop="20dp"
         android:ems="10"
         android:gravity="center"
         android:inputType="number"
@@ -121,16 +120,28 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/editTextNumber3"
+        android:id="@+id/gWeight_textInput"
         android:layout_width="87dp"
         android:layout_height="35dp"
         android:layout_marginStart="23dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:ems="10"
         android:gravity="center"
         android:inputType="number"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/weight_textInput" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="100dp"
+        android:text="Save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
