@@ -33,40 +33,36 @@ public class DiaryFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_diary, container, false);
 
-        inputName = (EditText) view.findViewById(R.id.name_textInput);
-        inputAge = (EditText) view.findViewById(R.id.age_textInput);
-        inputW = (EditText) view.findViewById(R.id.weight_textInput);
-        inputGW = (EditText) view.findViewById(R.id.gWeight_textInput);
-        saveBtn = view.findViewById(R.id.save_btn);
+        inputName = view.findViewById(R.id.name_textInput);
+        inputAge = view.findViewById(R.id.age_textInput);
+        inputW = view.findViewById(R.id.weight_textInput);
+        inputGW = view.findViewById(R.id.gWeight_textInput);
+        saveBtn = view.findViewById(R.id.button2);
 
-        saveBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SaveData();
-            }
-        });
+        saveBtn.setOnClickListener(this::SaveData);
 
-        //loadData();
-        //updateViews();
+
+        loadData();
+        updateViews();
 
         return view;
     }
 
-    public void SaveData()
+    public void SaveData(View view)
     {
-        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("textName", inputName.getText().toString());
         editor.putString("textAge", inputAge.getText().toString());
         editor.putString("textW", inputW.getText().toString());
         editor.putString("textGW", inputGW.getText().toString());
 
-        editor.apply();
+        editor.commit();
     }
 
     public void loadData()
     {
-        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
         text1 = sharedPreferences.getString("textName", "");
         text2 = sharedPreferences.getString("textAge", "");
         text3 = sharedPreferences.getString("textW", "");
