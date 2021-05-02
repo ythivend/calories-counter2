@@ -27,7 +27,7 @@
             android:layout_marginEnd="15dp"
             android:gravity="center"
             android:shadowColor="#FFFFFF"
-            android:text="First Item"
+            android:text="@string/item_title"
             android:textColor="#000000"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -42,7 +42,7 @@
             android:layout_marginEnd="15dp"
             android:gravity="center"
             android:shadowColor="#FFFFFF"
-            android:text="Brand"
+            android:text="@string/item_brand_title"
             android:textColor="#000000"
             android:textSize="18sp"
             android:textStyle="bold|italic"
@@ -65,7 +65,9 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
+        android:autofillHints=""
+        android:inputType="text">
 
     </EditText>
 
@@ -84,7 +86,7 @@
     </Spinner>
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/weightText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
@@ -101,7 +103,7 @@
     </TextView>
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/goalWeightText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
@@ -113,7 +115,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5">
+        app:layout_constraintTop_toBottomOf="@+id/weightText">
 
     </TextView>
 
@@ -130,7 +132,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6">
+        app:layout_constraintTop_toBottomOf="@+id/goalWeightText">
 
     </TextView>
 
@@ -173,7 +175,7 @@
         android:ems="10"
         android:enabled="false"
         android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintStart_toEndOf="@+id/weightText"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
     <EditText
@@ -185,7 +187,7 @@
         android:ems="10"
         android:enabled="false"
         android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintStart_toEndOf="@+id/goalWeightText"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumber2" />
 
     <EditText

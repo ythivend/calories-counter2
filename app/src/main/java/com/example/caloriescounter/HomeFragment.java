@@ -27,6 +27,7 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_home, container, false);
 
+        //setting the navigation from homeFragment to breakfastList fragment
         breakfast_bnt = view.findViewById(R.id.breakfast_button);
         breakfast_bnt.setOnClickListener(v -> {
             NavController navController = NavHostFragment.findNavController(this);

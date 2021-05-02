@@ -29,6 +29,8 @@ public class breakfastListFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_breakfast_list, container, false);
+
+        //setting the navigation from breakfastList to ListFragment
         FloatingActionButton button;
         button = view.findViewById(R.id.breakfast_fab);
         button.setOnClickListener(v -> {

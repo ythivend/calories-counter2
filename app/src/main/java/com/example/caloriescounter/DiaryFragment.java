@@ -19,7 +19,7 @@ import static android.content.Context.MODE_PRIVATE;
 public class DiaryFragment extends Fragment {
 
     private EditText inputName, inputAge, inputW, inputGW;
-    private Button saveBtn;
+    Button saveBtn;
 
     public static final String SHARED_PREFS = "sharedPrefs";
     private String text1, text2, text3, text4;
@@ -33,15 +33,17 @@ public class DiaryFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_diary, container, false);
 
+        //matching variables with elements from .xml
         inputName = view.findViewById(R.id.name_textInput);
         inputAge = view.findViewById(R.id.age_textInput);
         inputW = view.findViewById(R.id.weight_textInput);
         inputGW = view.findViewById(R.id.gWeight_textInput);
         saveBtn = view.findViewById(R.id.button2);
 
+        //saving buttons data on click
         saveBtn.setOnClickListener(this::SaveData);
 
-
+        //load data and update views with saved data in SharedPreferences
         loadData();
         updateViews();
 
@@ -50,6 +52,8 @@ public class DiaryFragment extends Fragment {
 
     public void SaveData(View view)
     {
+        //crating preferences strings for an element to be saved
+
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("textName", inputName.getText().toString());
@@ -57,11 +61,13 @@ public class DiaryFragment extends Fragment {
         editor.putString("textW", inputW.getText().toString());
         editor.putString("textGW", inputGW.getText().toString());
 
-        editor.commit();
+        editor.apply();
     }
 
     public void loadData()
     {
+        //load preferences strings for an element saved
+
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
         text1 = sharedPreferences.getString("textName", "");
         text2 = sharedPreferences.getString("textAge", "");
@@ -71,6 +77,8 @@ public class DiaryFragment extends Fragment {
 
     public void updateViews()
     {
+        //set new text in EditText
+
         inputName.setText(text1);
         inputAge.setText(text2);
         inputW.setText(text3);
