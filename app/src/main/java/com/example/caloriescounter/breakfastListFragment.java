@@ -38,6 +38,7 @@ public class breakfastListFragment extends Fragment {
             navController.navigate(R.id.action_breakfastListFragment_to_listFragment);
         });
 
+
         return view;
     }
 }

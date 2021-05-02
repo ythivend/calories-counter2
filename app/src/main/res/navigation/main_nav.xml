@@ -27,8 +27,8 @@
     <fragment
         android:id="@+id/breakfastListFragment"
         android:name="com.example.caloriescounter.breakfastListFragment"
-        android:label="fragment_breakfast_list"
-        tools:layout="@layout/fragment_breakfast_list" >
+        android:label="@string/breakfast_title"
+        tools:layout="@layout/fragment_breakfast_list">
         <action
             android:id="@+id/action_breakfastListFragment_to_listFragment"
             app:destination="@id/listFragment" />
@@ -36,18 +36,20 @@
     <fragment
         android:id="@+id/itemFragment"
         android:name="com.example.caloriescounter.ItemFragment"
-        android:label="fragment_item"
-        tools:layout="@layout/fragment_item" >
+        android:label="@string/item_title"
+        tools:layout="@layout/fragment_item">
         <action
             android:id="@+id/action_itemFragment_to_breakfastListFragment"
             app:destination="@id/breakfastListFragment" />
-        <argument android:name="item" />
+        <argument
+            android:name="item"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/listFragment"
         android:name="com.example.caloriescounter.listFragment"
-        android:label="fragment_list"
-        tools:layout="@layout/fragment_list" >
+        android:label="@string/list_title"
+        tools:layout="@layout/fragment_list">
         <action
             android:id="@+id/action_listFragment_to_itemFragment"
             app:destination="@id/itemFragment" />

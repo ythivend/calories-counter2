@@ -10,6 +10,8 @@ import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
@@ -49,20 +51,30 @@ public class listFragment extends Fragment {
                         List<String> item = new ArrayList<String>();
 
                         if(task.isSuccessful()){
-
+                            
+                            //récuperation en bdd dans Item->key->nomItem et placé dans la liste item
                             for (QueryDocumentSnapshot document : task.getResult()){
-                                Log.d("TAG", document.getId() + " => " + document.getData());
+                                //Log.d("TAG", document.getId() + " => " + document.getData());
                                 item.add(document.getData().get("nomItem").toString());
                             }
 
+                            //mettre le listView a jour avec les element de la bdd
                             ListView listView = view.findViewById(R.id.itemListView);
                             ArrayAdapter<String> arrayAdapter
                                     = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1 , item);
-
                             listView.setAdapter(arrayAdapter);
+                            
+                            //Action lorsque l'on clique sur un element du listVieww
                             listView.setOnItemClickListener((adapterView, view1, position, rowId) -> {
                                 String itemSelect = arrayAdapter.getItem(position);
                                 Snackbar.make(view, "Vous avez choisi " + itemSelect, Snackbar.LENGTH_LONG).show();
+
+                               //essaie de passage de parametre avec les bundles
+                                /* Bundle args = new Bundle();
+                                args.putString("nomItem", itemSelect);
+                                frag.setArguments(args);
+                                */
+                                
                                 NavController navController = NavHostFragment.findNavController(frag);
                                 navController.navigate(R.id.action_listFragment_to_itemFragment);
                             });
