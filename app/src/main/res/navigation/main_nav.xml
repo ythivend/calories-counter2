@@ -37,10 +37,19 @@
         android:id="@+id/itemFragment"
         android:name="com.example.caloriescounter.ItemFragment"
         android:label="fragment_item"
-        tools:layout="@layout/fragment_item" />
+        tools:layout="@layout/fragment_item" >
+        <action
+            android:id="@+id/action_itemFragment_to_breakfastListFragment"
+            app:destination="@id/breakfastListFragment" />
+        <argument android:name="item" />
+    </fragment>
     <fragment
         android:id="@+id/listFragment"
         android:name="com.example.caloriescounter.listFragment"
         android:label="fragment_list"
-        tools:layout="@layout/fragment_list" />
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_itemFragment"
+            app:destination="@id/itemFragment" />
+    </fragment>
 </navigation>
