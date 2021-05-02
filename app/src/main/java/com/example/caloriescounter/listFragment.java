@@ -52,24 +52,25 @@ public class listFragment extends Fragment {
 
                         if(task.isSuccessful()){
                             
-                            //récuperation en bdd dans Item->key->nomItem et placé dans la liste item
+                            //Data recovery in database. Item->key->nomItem
+                            // Result place in "item"
                             for (QueryDocumentSnapshot document : task.getResult()){
                                 //Log.d("TAG", document.getId() + " => " + document.getData());
                                 item.add(document.getData().get("nomItem").toString());
                             }
 
-                            //mettre le listView a jour avec les element de la bdd
+                            //update of listview with 'item'
                             ListView listView = view.findViewById(R.id.itemListView);
                             ArrayAdapter<String> arrayAdapter
                                     = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1 , item);
                             listView.setAdapter(arrayAdapter);
                             
-                            //Action lorsque l'on clique sur un element du listVieww
+                            //Action when one item is selected
                             listView.setOnItemClickListener((adapterView, view1, position, rowId) -> {
                                 String itemSelect = arrayAdapter.getItem(position);
                                 Snackbar.make(view, "Vous avez choisi " + itemSelect, Snackbar.LENGTH_LONG).show();
 
-                               //essaie de passage de parametre avec les bundles
+                               //try to use bundle
                                 /* Bundle args = new Bundle();
                                 args.putString("nomItem", itemSelect);
                                 frag.setArguments(args);

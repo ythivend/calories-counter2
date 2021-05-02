@@ -48,5 +48,9 @@
     <string name="db_fat">fat</string>
     <string name="db_marque">marque</string>
 
+    <!-- Database -->
+    <string name="text_stat">Coming Soon</string>
+
+
 
 </resources>

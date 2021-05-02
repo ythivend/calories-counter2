@@ -20,7 +20,7 @@ public class ItemFragment extends Fragment {
     public ItemFragment() {
         // Required empty public constructor
     }
-
+    //try to use bundle for passing parameter
     public static ItemFragment newInstance(String name) {
         Bundle bundle = new Bundle();
         bundle.putString("nomItem", name);
